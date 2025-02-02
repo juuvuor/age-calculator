@@ -12,15 +12,16 @@
     <div class="kaikki">
         <div>
             <p>kirjoita henkilötunnus</p>
-            <textarea id="hetu" placeholder="010100AXXX" onchange="logUpdatedText()"" ></textarea>
-            
+            <textarea id="hetu" placeholder="010100AXXX" onchange="logUpdatedText()" maxlength=10></textarea>
+            <p id="warning"></p>
         </div>
-        <div>
-            <p id=" tulos"></p>
-            <p>päivä</p>
-            <p>kuukausi</p>
-            <p>vuosi</p>
+        <div class="showAge">
+            <p id="day">päivä</p>
+            <p id="month">kuukausi</p>
+            <p id="day">vuosi</p>
         </div>
+        <button id="but" onclick=displayDate()>Näytä päivä</button>
+        <p id="tulos"></p>
     </div>
     <script src="script.js"></script>
 </body>
