@@ -1,26 +1,44 @@
-function logUpdatedText() {
-  let hetu = document.getElementById("hetu").value;
-  checkHetu(hetu);
-  if (hetu.length < 11) {
-    console.log(hetu);
-    showWarning();
+function validateAndLogHetu() {
+  let hetu = document.getElementById("hetu").value.toUpperCase();
+  if (checkHetu(hetu)) {
+    calculateDate(hetu)
+    console.log('kaiki ok')
   }
+  else {
+    showWarning();
+  } 
 }
+
+function calculateDate(hetu) {
+    const thisDay = new Date();
+    const birthDay = -2;
+    const century = hetu.substring(6, 7);
+    let year = 0
+    switch (hetu.substring(6, 7)) {
+        case "+":
+            year = 1800 + Number(hetu.substring(4,6));
+            console.log('year ' + year)
+            // Jatka tästä. merkataan päivä määrä ja lasketaan erotus.
+            break;
+        case "-":
+            year = 1900
+            break;
+        case "A":
+            year = 2000
+            break;
+    }
+    console.log('date '+thisDay.getDate()+":"+ (thisDay.getMonth()+1) + ":" + thisDay.getFullYear())
+    console.log('hetu '+ hetu)
+}
+
 
 function checkHetu(hetu) {
   const hetuPattern = /^\d{6}[+-A]\d{3}[0-9A-Y]$/;
-  if (hetuPattern.test(hetu) && checkMark(hetu)) {
-    console.log("Valid hetu: " + hetu);
-  } else {
-    console.log("Invalid hetu: " + hetu);
-    showWarning();
-  }
+  return hetuPattern.test(hetu) && checkMark(hetu);
+
 }
 
-// 010101A6378
-// 010101637 8
-// 0.2580645161
-
+// Test hetu. Not real !!
 // 131052-308T
 // 010101A6378
 // 020202+234Y
@@ -35,9 +53,6 @@ function checkMark(hetu) {
 
   const checkMark = expectedCheckMark[givenNumbers % 31];
 
-  console.log("checkMark " + checkMark);
-  console.log("givenNumbers " + givenNumbers);
-  console.log("givenCheckMark " + givenCheckMark);
   return checkMark == givenCheckMark;
 }
 
