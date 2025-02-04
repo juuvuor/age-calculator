@@ -7,6 +7,21 @@
 invalid: 030303+345Z
  */
 
+let typingTimer;                
+const doneTypingInterval = 1000; 
+
+// Näppäintä nostaessa aloitetaan ajastin
+document.getElementById('hetu').addEventListener('input', () => {
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(validateAndLogHetu, doneTypingInterval);
+});
+
+// Näppäintä painaessa tyhjennetään ajastin
+document.getElementById('hetu').addEventListener('keydown', () => {
+    clearTimeout(typingTimer);
+});
+
+
 /**
  * Validoi annetun hetun ja kirjaa tuloksen.
  */
@@ -16,6 +31,9 @@ function validateAndLogHetu() {
     calculateAge(hetu);
   } else {
     showWarning();
+    document.getElementById("bDay").textContent = `0`;
+    document.getElementById("bMonth").textContent = `0`;
+    document.getElementById("bYear").textContent = `0 `;
   }
 }
 
@@ -62,12 +80,10 @@ function calculateAge(hetu) {
     ageYears--;
     ageMonths += 12;
   }
-  document.getElementById("bDay").textContent = `${ageDays} päivää`;
-  document.getElementById("bMonth").textContent = `${ageMonths} kuukautta ja`;
-  document.getElementById("bYear").textContent = `${ageYears} vuotta,`;
-  console.log(
-    `Ikä: ${ageYears} vuotta, ${ageMonths} kuukautta, ${ageDays} päivää`
-  );
+  document.getElementById("bDay").textContent = ageDays;
+  document.getElementById("bMonth").textContent = ageMonths;
+  document.getElementById("bYear").textContent = ageYears;
+ 
 }
 
 /**

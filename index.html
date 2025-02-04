@@ -4,25 +4,44 @@
 <head>
     <meta charset="UTF-8" />
     <link href="style.css" rel="StyleSheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
     <title>Ikälaskuri</title>
 </head>
 
 <body>
-    <h1>Ikälaskuri</h1>
+    <h1>IKÄLASKURI</h1>
     <div class="kaikki">
+
         <div>
-            <p>kirjoita henkilötunnus</p>
-            <textarea id="hetu" placeholder="010100AXXX" onchange="validateAndLogHetu()" maxlength=11></textarea>
+            <p class="basicText">Kirjoita henkilötunnus</p>
+            <textarea id="hetu" placeholder="010101A000P" maxlength=11></textarea>
             <p id="warning"></p>
         </div>
-        <h3> Ikäsi </h3>
+        <p class="basicText">Ikäsi on</p>
         <div class="showAge">
-            <p id="bYear">0 vuotta,</p>
-            <p id="bMonth">0 kuukautta ja</p>
-            <p id="bDay">0 päivää</p>
+            <div class="circle-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" viewBox="0 0 94 94" fill="none">
+                    <circle cx="47" cy="47" r="45" stroke="#D5F1D8" stroke-width="4" />
+                </svg>
+                <div class="age-text" id="bYear">0</div>
+                <p>vuotta</p>
+            </div>
+            <div class="circle-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="95" height="94" viewBox="0 0 95 94" fill="none">
+                    <circle cx="47.6277" cy="47" r="45" stroke="#F9D779" stroke-width="4" />
+                </svg>
+                <div class="age-text" id="bMonth">0</div>
+                <p>kuukautta</p>
+            </div>
+            <div class="circle-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="95" height="94" viewBox="0 0 95 94" fill="none">
+                    <circle cx="47.2551" cy="47" r="45" stroke="#FDDACE" stroke-width="4" />
+                </svg>
+                <div class="age-text" id="bDay">0</div>
+                <p>päivää</p>
+            </div>
         </div>
-    </div>
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
