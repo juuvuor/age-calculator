@@ -22,6 +22,10 @@ h1 {
     color: red;
 }
 
+.showAge  p{
+    margin: 0 4px; /* Add margin between the elements */
+    font-size: 16px; /* Set the font size */
+}
 
 .showAge {
     display: flex;
@@ -31,11 +35,11 @@ h1 {
 }
 
 textarea {
-    width: 200px; /* Set the width of the textarea */
-    height: 30px; /* Set the height of the textarea */
-    resize: none; /* Prevent resizing */
-    text-align: center; /* Center the text */
-    vertical-align: middle; /* Center the text vertically */
-    line-height: 30px; /* Match the line height to the height of the textarea */
-    overflow: hidden; /* Hide overflow */
+    width: 200px; 
+    height: 30px; 
+    resize: none; 
+    text-align: center; 
+    vertical-align: middle;
+    line-height: 30px;
+    overflow: hidden; 
 }
