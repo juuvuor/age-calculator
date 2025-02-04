@@ -18,8 +18,7 @@ h1 {
 }
 
 .basicText {
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     color: #FFF;
@@ -32,17 +31,6 @@ h1 {
 }
 
 
-.warning {
-    border: 2px solid red;
-    border-radius: 4px;
-    color: white;
-}
-
-.showAge p {
-    margin: auto;
-    font-size: 15px;
-}
-
 .showAge {
     display: flex;
     justify-content: space-between;
@@ -50,11 +38,17 @@ h1 {
     flex-direction: row;
 }
 
+.showAge p {
+    margin: auto;
+    font-size: 15px;
+}
+
 .circle-container {
     position: relative;
     width: 94px;
     height: 94px;
 }
+
 .age-text {
     position: absolute;
     top: 50%;
@@ -64,6 +58,7 @@ h1 {
     font-weight: bold;
     color: #D5F1D8;
 }
+
 textarea {
     width: 310px;
     height: 54px;
@@ -81,4 +76,10 @@ textarea {
     align-items: center;
     padding: 0;
     line-height: 54px;
+}
+
+.warning {
+    border: 2px solid red;
+    border-radius: 4px;
+    color: white;
 }

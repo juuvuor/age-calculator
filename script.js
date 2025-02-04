@@ -7,20 +7,19 @@
 invalid: 030303+345Z
  */
 
-let typingTimer;                
-const doneTypingInterval = 1000; 
+let typingTimer;
+const doneTypingInterval = 2000;
 
 // Näppäintä nostaessa aloitetaan ajastin
-document.getElementById('hetu').addEventListener('input', () => {
-    clearTimeout(typingTimer);
-    typingTimer = setTimeout(validateAndLogHetu, doneTypingInterval);
+document.getElementById("hetu").addEventListener("input", () => {
+  clearTimeout(typingTimer);
+  typingTimer = setTimeout(validateAndLogHetu, doneTypingInterval);
 });
 
 // Näppäintä painaessa tyhjennetään ajastin
-document.getElementById('hetu').addEventListener('keydown', () => {
-    clearTimeout(typingTimer);
+document.getElementById("hetu").addEventListener("keydown", () => {
+  clearTimeout(typingTimer);
 });
-
 
 /**
  * Validoi annetun hetun ja kirjaa tuloksen.
@@ -31,9 +30,9 @@ function validateAndLogHetu() {
     calculateAge(hetu);
   } else {
     showWarning();
-    document.getElementById("bDay").textContent = `0`;
-    document.getElementById("bMonth").textContent = `0`;
-    document.getElementById("bYear").textContent = `0 `;
+    document.getElementById("bDay").textContent = 0;
+    document.getElementById("bMonth").textContent = 0;
+    document.getElementById("bYear").textContent = 0;
   }
 }
 
@@ -83,7 +82,17 @@ function calculateAge(hetu) {
   document.getElementById("bDay").textContent = ageDays;
   document.getElementById("bMonth").textContent = ageMonths;
   document.getElementById("bYear").textContent = ageYears;
- 
+}
+
+/**
+ * Hakee edellisen kuukauden päivien lukumäärän.
+ * @param {Date} date - Nykyinen päivämäärä.
+ * @returns {number} - Edellisen kuukauden päivien lukumäärä.
+ */
+function getDaysInPreviousMonth(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  return new Date(year, month, 0).getDate();
 }
 
 /**
@@ -107,22 +116,9 @@ function getBirthDateFromHetu(hetu) {
     case "A":
       year += 2000;
       break;
-    default:
-      throw new Error("Virheellinen vuosisadan merkki hetussa");
   }
 
-  return new Date(year, month - 1, day); // Kuukaudet ovat nollapohjaisia
-}
-
-/**
- * Hakee edellisen kuukauden päivien lukumäärän.
- * @param {Date} date - Nykyinen päivämäärä.
- * @returns {number} - Edellisen kuukauden päivien lukumäärä.
- */
-function getDaysInPreviousMonth(date) {
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  return new Date(year, month, 0).getDate();
+  return new Date(year, month - 1, day);
 }
 
 /**
@@ -144,4 +140,3 @@ function clearWarning() {
   warningElement.classList.remove("warning");
   clearTimeout();
 }
-
