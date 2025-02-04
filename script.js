@@ -13,7 +13,7 @@ const doneTypingInterval = 2000;
 // Näppäintä nostaessa aloitetaan ajastin
 document.getElementById("hetu").addEventListener("input", () => {
   clearTimeout(typingTimer);
-  typingTimer = setTimeout(validateAndLogHetu, doneTypingInterval);
+  typingTimer = setTimeout(validateHetu, doneTypingInterval);
 });
 
 // Näppäintä painaessa tyhjennetään ajastin
@@ -22,9 +22,9 @@ document.getElementById("hetu").addEventListener("keydown", () => {
 });
 
 /**
- * Validoi annetun hetun ja kirjaa tuloksen.
+ * Validoi annetun hetun 
  */
-function validateAndLogHetu() {
+function validateHetu() {
   let hetu = document.getElementById("hetu").value.toUpperCase(); // Muutetaan isoiksi kirjaimiksi
   if (isValidHetu(hetu)) {
     calculateAge(hetu);
