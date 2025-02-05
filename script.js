@@ -8,7 +8,7 @@ invalid: 030303+345Z
  */
 
 let typingTimer;
-const doneTypingInterval = 2000;
+const doneTypingInterval = 1500;
 
 // Näppäintä nostaessa aloitetaan ajastin
 document.getElementById("hetu").addEventListener("input", () => {
@@ -128,7 +128,7 @@ function showWarning() {
   let warningElement = document.getElementById("warning");
   warningElement.textContent = "Tarkista henkilötunnus!";
   warningElement.classList.add("warning");
-  setTimeout(clearWarning, 5000);
+  setTimeout(clearWarning, 3500);
 }
 
 /**
