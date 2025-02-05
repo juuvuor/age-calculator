@@ -7,9 +7,9 @@
 invalid: 030303+345Z
  */
 
-import { isValidHetu, isValidCheckMark } from "./validhetu.js";
-import {getDaysInPreviousMonth,getBirthDateFromHetu} from "./calculateAge.js";
-import { showWarning, clearWarning } from "./warnings.js";
+import { isValidHetu } from "./validhetu.js";
+import { getDaysInPreviousMonth, getBirthDateFromHetu } from "./calculateAge.js";
+import { showWarning } from "./warnings.js";
 
 let typingTimer;
 const doneTypingInterval = 1500;
@@ -64,4 +64,3 @@ function calculateAge(hetu) {
   document.getElementById("bMonth").textContent = ageMonths;
   document.getElementById("bYear").textContent = ageYears;
 }
-
