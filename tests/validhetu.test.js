@@ -1,4 +1,4 @@
-import { isValidHetu, isValidCheckMark } from "./validhetu.js";
+import { isValidHetu, isValidCheckMark } from "../src/validhetu";
 
 // Testit isValidHetu-funktiolle
 describe("isValidHetu", () => {

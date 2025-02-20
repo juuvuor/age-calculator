@@ -8,7 +8,10 @@ invalid: 030303+345Z
  */
 
 import { isValidHetu } from "./validhetu.js";
-import { getDaysInPreviousMonth, getBirthDateFromHetu } from "./calculateAge.js";
+import {
+  getDaysInPreviousMonth,
+  getBirthDateFromHetu,
+} from "./calculateAge.js";
 import { showWarning } from "./warnings.js";
 
 let typingTimer;

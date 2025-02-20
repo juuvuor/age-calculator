@@ -1,4 +1,7 @@
-import { getDaysInPreviousMonth, getBirthDateFromHetu } from "./calculateAge";
+import {
+  getDaysInPreviousMonth,
+  getBirthDateFromHetu,
+} from "../src/calculateAge";
 
 // Testit getDaysInPreviousMonth-funktiolle
 describe("getDaysInPreviousMonth", () => {
