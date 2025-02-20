@@ -1,6 +1,4 @@
-/**
- * Näyttää varoitusviestin.
- */
+// Näyttää varoitusviestin.
 export function showWarning() {
   let warningElement = document.getElementById("warning");
   warningElement.textContent = "Tarkista henkilötunnus!";
@@ -8,9 +6,7 @@ export function showWarning() {
   setTimeout(clearWarning, 3500);
 }
 
-/**
- * Tyhjentää varoitusviestin.
- */
+//Tyhjentää varoitusviestin.
 export function clearWarning() {
   let warningElement = document.getElementById("warning");
   warningElement.textContent = "";

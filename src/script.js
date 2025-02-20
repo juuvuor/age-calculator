@@ -28,11 +28,9 @@ document.getElementById("hetu").addEventListener("keydown", () => {
   clearTimeout(typingTimer);
 });
 
-/**
- * Validoi annetun hetun
- */
+// Validoi annetun hetun
 function validateHetu() {
-  let hetu = document.getElementById("hetu").value.toUpperCase(); // Muutetaan isoiksi kirjaimiksi
+  let hetu = document.getElementById("hetu").value.toUpperCase(); 
   if (isValidHetu(hetu)) {
     calculateAge(hetu);
   } else {

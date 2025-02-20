@@ -1,3 +1,4 @@
+import { showWarning } from "./warnings.js";
 /**
  * Hakee edellisen kuukauden päivien lukumäärän.
  * @param {Date} date - Nykyinen päivämäärä.
@@ -31,7 +32,7 @@ export function getBirthDateFromHetu(hetu) {
       year += 2000;
       break;
     default:
-      throw new Error("Virheellinen vuosisadan merkki hetussa");
+      showWarning();
   }
 
   return new Date(year, month - 1, day);
